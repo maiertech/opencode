@@ -4,7 +4,7 @@
   // Turn off OpenCode Zen models.
   "disabled_providers": ["github-copilot", "opencode"],
   // Model IDs: https://opencode.ai/docs/go/#endpoints
-  "model": "opencode-go/gpt-5.6-luna",
+  "model": "opencode-go/glm-5.3-flash",
   "default_agent": "plan",
   "experimental": {
     "disable_paste_summary": true, // Required for voice dictation with OpenCode.
