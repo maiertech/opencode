@@ -19,5 +19,9 @@
         "Authorization": "Bearer {env:GITHUB_TOKEN}",
       },
     },
+    "railway": {
+      "type": "local",
+      "command": ["railway", "mcp"],
+    },
   },
 }
