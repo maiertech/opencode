@@ -12,5 +12,8 @@
     "thinking": "show"
   },
   "animations": true,
+  "prompt": {
+    "paste": "full"
+  },
   "plugins": ["./herdr-opencode"]
 }
