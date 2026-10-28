@@ -1,13 +1,17 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  // `GITHUB_TOKEN` env var triggers Copilot models to be read.
-  // Turn off OpenCode Zen models.
   "policies": [
-    { "action": "provider.use", "resource": "github-copilot", "effect": "deny" },
+    // If `GITHUB_TOKEN` is present, Copilot models are listed.
+    {
+      "action": "provider.use",
+      "resource": "github-copilot",
+      "effect": "deny",
+    },
+    // Turn off OpenCode Zen models.
     { "action": "provider.use", "resource": "opencode", "effect": "deny" },
   ],
   // Model IDs: https://opencode.ai/docs/go/#endpoints
-  "model": "opencode-go/minimax-m3.1-flash",
+  "model": "opencode-go/claude-haiku-5-5",
   "default_agent": "plan",
   "mcp": {
     "servers": {
