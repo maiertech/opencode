@@ -16,7 +16,7 @@
         "disabled": false,
         "oauth": false,
         "headers": {
-          "Authorization": "Bearer {env:OCTO_TOKEN}",
+          "Authorization": "Bearer {env:GITHUB_PAT}",
         },
       },
     },
