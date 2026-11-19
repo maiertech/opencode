@@ -1,18 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "policies": [
-    // If `GITHUB_TOKEN` is present, Copilot models are listed.
-    {
-      "action": "provider.use",
-      "resource": "github-copilot",
-      "effect": "deny",
-    },
-    // Turn off OpenCode Zen models.
-    { "action": "provider.use", "resource": "opencode", "effect": "deny" },
-  ],
   // Model IDs: https://opencode.ai/docs/go/#endpoints
   "model": "opencode-go/claude-haiku-5-5",
-  "default_agent": "plan",
+  // T3 Code cannot switch out of plan mode.
+  "default_agent": "build",
+  // Make home repo project skills available everywhere.
+  "skills": ["~/repos/github/home/.agents/skills"],
+  // Make home repo `AGENTS.md` available everywhere.
+  "instructions": ["~/repos/github/home/AGENTS.md"],
   "mcp": {
     "servers": {
       "github": {
@@ -21,7 +16,7 @@
         "disabled": false,
         "oauth": false,
         "headers": {
-          "Authorization": "Bearer {env:GITHUB_TOKEN}",
+          "Authorization": "Bearer {env:OCTO_TOKEN}",
         },
       },
     },
